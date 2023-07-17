@@ -30,18 +30,20 @@ export default function Home() {
   return (
     <>
       <BasisTheoryProvider bt={bt}>
-        <AppBar position="fixed" elevation={0}>
-          <Toolbar sx={{ justifyContent: "center" }}>Bank</Toolbar>
+        <AppBar position="fixed" elevation={0} color="secondary">
+          <Toolbar sx={{ justifyContent: "center" }} color="secondary">
+            My Bank
+          </Toolbar>
         </AppBar>
         <Offset />
-        <Container component="main" maxWidth="sm">
-          <TabContext value={tab}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <TabList onChange={(_, value) => setTab(value)} centered>
-                <Tab label="Physical Card" value="physical" />
-                <Tab label="Virtual Card" value="virtual" />
-              </TabList>
-            </Box>
+        <TabContext value={tab}>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <TabList onChange={(_, value) => setTab(value)} centered>
+              <Tab label="Physical Card" value="physical" />
+              <Tab label="Virtual Card" value="virtual" />
+            </TabList>
+          </Box>
+          <Container component="main" maxWidth="sm">
             <Typography variant="h4" textAlign="center" marginTop={6}>
               Your Credit Card
             </Typography>
@@ -49,8 +51,8 @@ export default function Home() {
               <PhysicalCard />
             </TabPanel>
             <TabPanel value="virtual">Coming soon...</TabPanel>
-          </TabContext>
-        </Container>
+          </Container>
+        </TabContext>
       </BasisTheoryProvider>
     </>
   );
