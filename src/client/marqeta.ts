@@ -9,11 +9,9 @@ export const setPinMarqeta = async (
 ) => {
   const {
     data: { control_token },
-  } = await axios.post("/api/authorize");
+  } = await axios.post("/api/authorize/marqeta");
 
-  // https://developers.basistheory.com/docs/sdks/web/react/methods#put
-  await (bt as any).put(
-    // Typescript bug requires casting
+  await bt.put(
     "https://sandbox-api.marqeta.com/v3/pins", // request is made through the iframe
     {
       control_token, // passing plain text data

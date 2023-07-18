@@ -56,10 +56,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@basis-theory/basis-theory-js@^1.74.0":
-  version "1.79.2"
-  resolved "https://registry.yarnpkg.com/@basis-theory/basis-theory-js/-/basis-theory-js-1.79.2.tgz#7cf72b092492369cb193d97d8736eecf27e2dfe4"
-  integrity sha512-3Uy6kjSNF/wTk1Ux+DVIdxeNycayB4HmDLhfUK0nuNtBiFOnNda6SnXDrGY3l1u/DKJ5SpjggyJk4Mdfr4nzBw==
+"@basis-theory/basis-theory-js@^1.79.3":
+  version "1.79.3"
+  resolved "https://registry.yarnpkg.com/@basis-theory/basis-theory-js/-/basis-theory-js-1.79.3.tgz#5335830df1f0e64c09bc35938952076695a109c7"
+  integrity sha512-YheSVMTISXPAyZS4aWuIutsgKUCpT0BIfbNOw5ilvHUdun9BIpmE4w5Q/L6/SOxzdqbzRECBDvcDM6KG8T+MKA==
   dependencies:
     axios "^1.4.0"
     camelcase-keys "^6.2.2"
@@ -69,12 +69,12 @@
     snake-case "^3.0.4"
     snakecase-keys "^3.2.1"
 
-"@basis-theory/basis-theory-react@^1.12.1":
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/@basis-theory/basis-theory-react/-/basis-theory-react-1.12.1.tgz#e0d61ba0f65b091eb8714c0c06db258cda369948"
-  integrity sha512-/OIwAd+u8cLM7F5mr/FOjO8F5K85Ywmsz8Ch4gqcU1JHFDwxpROBum7tRG8HJxUJz1fOlAPpyC9/RoKQ1SoKbA==
+"@basis-theory/basis-theory-react@^1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@basis-theory/basis-theory-react/-/basis-theory-react-1.12.2.tgz#97e2e0693310c4aeb77fd348458b9dab376625e6"
+  integrity sha512-AEX5+q0h8noVtmrTxxxeZsgOmAVX0MrImpKzfO++HqzD2U/s6Dlf9gpGQOgl4hj5/9Qg3Invl8kBpuzKjFhoHw==
   dependencies:
-    "@basis-theory/basis-theory-js" "^1.74.0"
+    "@basis-theory/basis-theory-js" "^1.79.3"
 
 "@emotion/babel-plugin@^11.11.0":
   version "11.11.0"
@@ -502,6 +502,11 @@
   version "0.16.3"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.3.tgz#cef09e3ec9af1d63d2a6cc5b383a737e24e6dcf5"
   integrity sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
+
+"@types/uuid@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.2.tgz#ede1d1b1e451548d44919dc226253e32a6952c4b"
+  integrity sha512-kNnC1GFBLuhImSnV7w4njQkUiJi0ZXUycu1rUaouPqiKlXkh77JKgdRnTAp1x5eBwcIwbtI+3otwzuIDEuDoxQ==
 
 "@typescript-eslint/parser@^5.42.0":
   version "5.62.0"
@@ -2705,6 +2710,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 watchpack@2.4.0:
   version "2.4.0"

@@ -1,7 +1,7 @@
 const forge = require("node-forge");
 
 const createKey = (LITHIC_PUB_KEY) => {
-  const pem = Buffer.from(LITHIC_PUB_KEY, "base64").toString("binary");
+  const pem = Buffer.from(LITHIC_PUB_KEY, "base64").toString();
   return forge.pki.publicKeyFromPem(pem);
 };
 
@@ -11,12 +11,11 @@ function randomInt(low, high) {
 }
 
 const encryptPinBlock = (pin, publicKey) => {
+  const nonce = randomInt(1e8, 1e12);
   const pinBlock = {
-    nonce: randomInt(1e8, 1e12),
+    nonce,
     pin,
   };
-
-  console.log(pinBlock);
 
   const ciphertext = publicKey.encrypt(JSON.stringify(pinBlock), "RSA-OAEP", {
     md: forge.md.sha1.create(),
@@ -25,13 +24,7 @@ const encryptPinBlock = (pin, publicKey) => {
     },
   });
 
-  // Use this for the "pin" field value when creating or updating cards
-  const encryptedPinBlock = forge.util.encode64(ciphertext);
-
-  return {
-    ...pinBlock,
-    pin: encryptedPinBlock,
-  };
+  return forge.util.encode64(ciphertext);
 };
 
 module.exports = (req) => {
@@ -41,19 +34,18 @@ module.exports = (req) => {
     configuration: { LITHIC_PUB_KEY, LITHIC_API_KEY },
   } = req;
   const {
-    body: { pin, ...body },
+    body: { pin },
     headers,
   } = args;
+
+  console.log(args.body);
 
   const publicKey = createKey(LITHIC_PUB_KEY);
   const pinBlock = encryptPinBlock(pin, publicKey);
 
-  console.log(pinBlock);
-
   return {
     body: {
-      ...body,
-      ...pinBlock,
+      pin: pinBlock,
     },
     headers: {
       ...headers,

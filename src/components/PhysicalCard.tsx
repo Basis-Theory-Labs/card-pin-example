@@ -5,7 +5,7 @@ import { Box } from "@mui/system";
 import { RefObject, useState } from "react";
 import type { TextElement as ITextElement } from "@basis-theory/basis-theory-react/types";
 import { Card as CardRender } from "@/components/Card";
-import { setPinMarqeta } from "@/components/marqeta";
+import { setPinIssuer } from "@/client";
 import { SetPinDialog } from "@/components/SetPinDialog";
 import type { BasisTheory } from "@basis-theory/basis-theory-js/types/sdk";
 
@@ -15,7 +15,7 @@ const PhysicalCard = () => {
 
   const setPin = async (bt: BasisTheory, pinRef: RefObject<ITextElement>) => {
     try {
-      await setPinMarqeta(bt, pinRef);
+      await setPinIssuer("lithic", bt, pinRef);
       setSnackbar("PIN set successfully!");
     } catch (error) {
       setSnackbar("An error occurred, check the console for more info.");
