@@ -15,7 +15,7 @@ const PhysicalCard = () => {
 
   const setPin = async (bt: BasisTheory, pinRef: RefObject<ITextElement>) => {
     try {
-      await setPinIssuer("lithic", bt, pinRef);
+      await setPinIssuer("galileo", bt, pinRef);
       setSnackbar("PIN set successfully!");
     } catch (error) {
       setSnackbar("An error occurred, check the console for more info.");

@@ -15,11 +15,7 @@ const galileoHeaders = () => ({
 });
 
 export async function POST(request: NextRequest) {
-  const {
-    data: {
-      response_data: { token },
-    },
-  } = await axios.post(
+  const { data } = await axios.post(
     "https://api-sandbox.cv.gpsrv.com/intserv/4.0/getCardPinChangeKey",
     querystring.stringify({
       ...galileoAuth(),
@@ -31,5 +27,10 @@ export async function POST(request: NextRequest) {
     }
   );
 
-  return NextResponse.json({ token });
+  if (data.response_data?.token === undefined) {
+    console.error(data);
+    return new Response(null, { status: 500 });
+  }
+
+  return NextResponse.json({ token: data.response_data?.token });
 }

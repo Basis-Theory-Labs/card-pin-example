@@ -1,6 +1,6 @@
 # Card PIN Example
 
-This example shows how to Set PIN to a Card issued with Marqeta using Basis Theory Elements. 
+This example shows how to Set PIN to a Card issued with Marqeta, Lithic or Galileo using Basis Theory Elements. 
 
 
 ## Setup 
