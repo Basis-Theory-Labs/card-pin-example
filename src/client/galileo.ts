@@ -11,7 +11,7 @@ export const setPinGalileo = async (
     data: { token },
   } = await axios.post("/api/authorize/galileo");
 
-  await bt.post(
+  await bt.client?.post(
     "https://agserv-sandbox.cv.gpsrv.com/agserv/pin", // request is made through the iframe
     {
       pin: pinRef.current, // passing element in the payload

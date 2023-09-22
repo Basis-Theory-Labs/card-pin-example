@@ -16,6 +16,7 @@ import {
   BasisTheoryProvider,
   useBasisTheory,
 } from "@basis-theory/basis-theory-react";
+import { VirtualCard } from "@/components/VirtualCard";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 export default function Home() {
@@ -50,7 +51,12 @@ export default function Home() {
             <TabPanel value="physical">
               <PhysicalCard />
             </TabPanel>
-            <TabPanel value="virtual">Coming soon...</TabPanel>
+            <TabPanel
+              value={tab}
+              sx={tab !== "virtual" ? { display: "none" } : undefined}
+            >
+              <VirtualCard />
+            </TabPanel>
           </Container>
         </TabContext>
       </BasisTheoryProvider>

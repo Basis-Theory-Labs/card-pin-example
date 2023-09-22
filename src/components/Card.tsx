@@ -30,7 +30,7 @@ export const Card = ({
           height="100%"
           sx={{ containerType: "inline-size" }}
         >
-          <Box position="absolute" top="56.67%" left="9.6%">
+          <Box position="absolute" top="56.67%" left="9.6%" width="65%">
             {typeof cardNumber === "string" && (
               <Typography color="white" fontSize="5.734cqw">
                 {cardNumber}
